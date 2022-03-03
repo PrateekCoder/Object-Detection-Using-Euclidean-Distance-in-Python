@@ -22,20 +22,9 @@ plt.imshow(wolf_sheep)
 wolf_rescale = rescale(wolf, scale=(0.05, 0.05))
 wolf_sheep_rescale = rescale(wolf_sheep, scale=(0.05, 0.05))
 
-#Show Image After Rescaling
-#plt.imshow(wolf_rescale)
-#plt.imshow(wolf_sheep_rescale)
-
-#Flattening
-wolf_rescale_flat = wolf_rescale.ravel()
-window_shape = (wolf_rescale.shape[0], wolf_rescale.shape[1])
-
 #Creating Patches
 patches = extract_patches_2d(wolf_sheep_rescale, window_shape)
 print("There were total of", len(patches), "patches created.")
-
-#Flattening The Patches.
-patches_flat = patches.ravel()
 
 #Finding the coordinates logic function:
 def coordinate(patches, wolf_sheep_rescale):
